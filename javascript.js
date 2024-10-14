@@ -1,15 +1,26 @@
 const mainContainer = document.querySelector("#mainDiv");
+const button = document.querySelector("#butt");
 
-for (let index = 0; index < 16; index++) {
-    const column = document.createElement("div");
-    column.classList.add("tiles", "column");
-    mainContainer.appendChild(column);
-    for (let x = 0; x < 16; x++) {
-        const tile = document.createElement("div");
-        tile.classList.add("tiles", "row");
-        tile.textContent = "r";
-        column.appendChild(tile);
+function askForSize(){
+    let userInput = prompt("Enter the amount of grid size:");
+    if(userInput > 100 || userInput < 1){
+        alert("Incorrect amount");
+    }else{
+        createGrid(userInput);
     }
-    
 }
-
+function createGrid(maxSize){
+    mainContainer.textContent = "";
+    for (let index = 0; index < maxSize; index++) {
+        const column = document.createElement("div");
+        column.classList.add("column");
+        mainContainer.appendChild(column);
+        for (let x = 0; x < maxSize; x++) {
+            const tile = document.createElement("div");
+            tile.classList.add("tiles", "row");
+            tile.addEventListener("mouseover", () => tile.classList.add("darker"));
+            column.appendChild(tile);
+        }
+        
+    }
+}
