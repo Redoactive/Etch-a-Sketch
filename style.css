@@ -1,0 +1,16 @@
+*{
+    outline: 1px red solid;
+}
+body{
+    margin: 0%;
+}
+.tiles{
+
+}
+.column{
+    display: flex;
+    height: 5vmax;
+}
+.row{
+    flex: 1;
+}
