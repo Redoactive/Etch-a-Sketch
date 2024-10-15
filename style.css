@@ -4,8 +4,11 @@
 }
 #mainDiv{
     text-align: center;
-    width: 960px;
-    height: 960px;
+  margin-inline: auto;
+    height: 90vmin;
+    width: 90vmin;
+    border: 5px solid black;
+    display: flex;
 }
 body{
     margin: 5%;
@@ -16,10 +19,15 @@ body{
 }
 .column{
     display: flex;
-    height: 5Vh;
+    width: 100vh;
+    flex-direction: column;
+    flex:1;
+
 }
 .row{
     flex: 1;
+    
+    
 }
 .darker{
     background-color: gray;
